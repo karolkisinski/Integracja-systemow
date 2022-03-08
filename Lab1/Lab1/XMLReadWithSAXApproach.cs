@@ -1,27 +1,39 @@
-﻿using System.Xml;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using System.Xml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace lab1_kk
 {
-    internal class XMLReadWithDOMApproach
+    internal class XMLReadWithSAXApproach
     {
         internal static void Read(string filepath)
         {
+            // konfiguracja początkowa dla XmlReadera
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.IgnoreComments = true;
+            settings.IgnoreProcessingInstructions = true;
+            settings.IgnoreWhitespace = true;
             // odczyt zawartości dokumentu
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            string postac;
-            string sc;
+            XmlReader reader = XmlReader.Create(filepath, settings);
+            // zmienne pomocnicze
             int count = 0;
-            var drugs = doc.GetElementsByTagName("produktLeczniczy");
-            foreach (XmlNode d in drugs)
+            string postac = "";
+            string sc = "";
+            reader.MoveToContent();
+            // analiza każdego z węzłów dokumentu
+            while (reader.Read())
             {
-                postac = d.Attributes.GetNamedItem("postac").Value;
-                sc = d.Attributes.GetNamedItem("nazwaPowszechnieStosowana").Value;
-                if (postac == "Krem" && sc == "Mometasoni furoas")
-                    count++;
+                if (reader.NodeType == XmlNodeType.Element && reader.Name
+                == "produktLeczniczy")
+                {
+                    postac = reader.GetAttribute("postac");
+                    sc =
+                    reader.GetAttribute("nazwaPowszechnieStosowana");
+                    if (postac == "Krem" && sc == "Mometasoni furoas")
+                        count++;
+                }
             }
             Console.WriteLine("Liczba produktów leczniczych w postaci kremu, których jedyną substancją czynną jest Mometasoni furoas {0}", count);
         }
@@ -57,7 +69,7 @@ namespace lab1_kk
 
             foreach (var x in q)
             {
-                if(x.Count > 1)
+                if (x.Count > 1)
                 {
                     //Console.WriteLine("Nazwa powszechna: " + x.Value + " Ilosc postaci: " + x.Count);
                     temp_licznik++;
@@ -65,8 +77,5 @@ namespace lab1_kk
             }
             Console.WriteLine("Ilosc preparatow majacych wiecej niz 1 postac o tej samej nazwie powszechnej: {0}", temp_licznik);
         }
-
-
-
     }
 }
