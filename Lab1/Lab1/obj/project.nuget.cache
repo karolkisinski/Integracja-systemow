@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Ocsm+7Wxb5vvrZPQ8V8z7BjB4WMg1tpVqR/g0nQ6ta2wHxMbAIbwRRDaE/BxbksmpzeDJoTBeZlsq8X6UvXLew==",
+  "dgSpecHash": "Is+U0KyGvEuwbqbdiomdMGOUi3navLA4EUTflHhzpFbACe/DKJ5RSfvE533jJiQ8nrf+kNbjnOEvnxESgvNBSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\karol\\source\\repos\\Lab1\\Lab1\\Lab1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\karol\\.nuget\\packages\\documentformat.openxml\\2.15.0\\documentformat.openxml.2.15.0.nupkg.sha512",
+    "C:\\Users\\karol\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -14,3 +14,6 @@ C:\Users\karol\source\repos\Lab1\Lab1\obj\Debug\net5.0\refint\Lab1.dll
 C:\Users\karol\source\repos\Lab1\Lab1\obj\Debug\net5.0\Lab1.pdb
 C:\Users\karol\source\repos\Lab1\Lab1\obj\Debug\net5.0\Lab1.genruntimeconfig.cache
 C:\Users\karol\source\repos\Lab1\Lab1\obj\Debug\net5.0\ref\Lab1.dll
+C:\Users\karol\source\repos\Lab1\Lab1\bin\Debug\net5.0\DocumentFormat.OpenXml.dll
+C:\Users\karol\source\repos\Lab1\Lab1\bin\Debug\net5.0\System.IO.Packaging.dll
+C:\Users\karol\source\repos\Lab1\Lab1\obj\Debug\net5.0\Lab1.csproj.CopyComplete
